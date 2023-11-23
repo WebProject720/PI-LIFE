@@ -1,0 +1,57 @@
+.t-n-btn-icon {
+    background-color: transparent;
+    height: 30px;
+}
+
+/* Notes Container */
+.sin-note {
+    background-color: rgba(152, 147, 147, 0.673);
+    border-radius: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+}
+.note-icon {
+    height: 50px;
+}
+.notes {
+    padding: 5px ;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.note-head{
+    background-color: rgba(0, 0, 0, 0.603);
+}
+.web-text {
+    color: black;
+    font-size: larger;
+    font-weight: 400;
+}
+.web-text-link{
+    font-style: normal;
+    text-decoration: none;
+}
+.web-text-link>.web-text:hover{
+    color: blue;
+}
+.note-head-text{
+    font-weight: bold;
+    font-size: larger;
+    color: aliceblue;
+}
+.pd-r-5{
+    padding-right: 5px;
+}
+.pd-l-5{
+    padding-right: 5px;
+}
+.img-con-note{
+    display: flex;
+    align-items: center;
+}

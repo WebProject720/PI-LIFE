@@ -1,0 +1,83 @@
+.nav-container {
+    background-color: rgb(39, 35, 35);
+    color: aliceblue;
+}
+
+nav,
+.list {
+    height: 100%;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.list-item {
+    background-color: cadetblue;
+    border-radius: 20px;
+    padding: 2px;
+    width: 50%;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.heading {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+/* Design Complete */
+.calendar-nav {
+    border: 5px solid #21d421;
+}
+
+/* Container Top Navbar ; design based on sections */
+.navbar-top {
+    background-color: gray;
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.t-n-button {
+    background: transparent;
+    border: 0px;
+    outline: 0px;
+    font-size: large;
+    color: white;
+    font-weight: bold;
+}
+
+.t-n-button::placeholder {
+    font-size: large;
+    color: rgba(255, 255, 255, 0.741);
+}
+
+.t-n-btn-div {
+    background-color: rgba(255, 255, 255, 0.47);
+    border-radius: 2px;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.t-n-btn {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
