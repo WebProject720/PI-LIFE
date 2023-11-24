@@ -1,57 +1,50 @@
-.t-n-btn-icon {
-    background-color: transparent;
-    height: 30px;
+/* Styles for all note list page */
+.note-icon-pr {
+    width: 60px;
 }
 
-/* Notes Container */
-.sin-note {
-    background-color: rgba(152, 147, 147, 0.673);
-    border-radius: 5px;
-    padding: 5px;
-    display: grid;
-    grid-template-columns: 20% 40% 40%;
+.delete-icon {
+    width: 24px;
 }
-.note-icon {
-    height: 50px;
+
+.buttons-img {
+    background-color: transparent;
+    border: 0cap;
+    outline: 0cap;
 }
-.notes {
-    padding: 5px ;
+.list-notes{
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 10px;
 }
-.center{
+.list-notes>.list {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    background-color: rgb(255 255 255 / 4%);
+    border-radius: 8px;
+    padding: 5px 0px;
 }
-.note-head{
-    background-color: rgba(0, 0, 0, 0.603);
+.list-head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
 }
-.web-text {
-    color: black;
+.container {
+    padding: 20px;
+}
+
+.doc-name {
+    color: white;
     font-size: larger;
-    font-weight: 400;
-}
-.web-text-link{
-    font-style: normal;
     text-decoration: none;
 }
-.web-text-link>.web-text:hover{
-    color: blue;
+
+.link {
+    text-decoration: none;
 }
-.note-head-text{
-    font-weight: bold;
+.heading-head{
     font-size: larger;
-    color: aliceblue;
-}
-.pd-r-5{
-    padding-right: 5px;
-}
-.pd-l-5{
-    padding-right: 5px;
-}
-.img-con-note{
-    display: flex;
-    align-items: center;
+    font-weight: bolder;
 }

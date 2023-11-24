@@ -18,7 +18,7 @@
 
 .a-m-c {
     background-color: rgb(5, 5, 75);
-    min-height: 80vh;
+    min-height: 100vh;
     margin-left: var(--aside-width);
     /**/
     position: relative;
@@ -50,6 +50,7 @@ body {
 }
 
 .box {
+    width: 100%;
     position: absolute;
     top: var(--top-nav-height);
     min-height: -moz-fit-content;
