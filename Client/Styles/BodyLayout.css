@@ -1,5 +1,5 @@
 :root {
-    --aside-width: 5vw;
+    --aside-width: 8vw;
     --top-nav-height: 60px;
     --box-height: 150px;
 }
@@ -22,6 +22,7 @@
     margin-left: var(--aside-width);
     /**/
     position: relative;
+    background-color: rgb(23, 6, 88);
 }
 
 body {
@@ -173,9 +174,11 @@ body {
 /* Footer  */
 .ul-footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 25px;
+    padding: 2px;
+    flex-wrap: wrap;
 }
 
 .footer-item {

@@ -1,0 +1,1 @@
+config = { database: "MyDiary", collection: "user", scheme: "scheme", path: "mongodb://127.0.0.1:27017" }
