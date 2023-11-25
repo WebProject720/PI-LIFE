@@ -2,6 +2,7 @@
     --aside-width: 8vw;
     --top-nav-height: 60px;
     --box-height: 150px;
+    --aside-border:4px;
 }
 
 :root {
@@ -96,7 +97,9 @@ body {
     background-color: rgb(5, 5, 75);
     padding: 0%;
 }
-
+.heading-section{
+    padding-left: 15px;
+}
 
 /* Example Syntex */
 .elements {
@@ -118,7 +121,9 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+.element-item:hover{
+    background-color: rgba(255, 255, 255, 0.601);
+}
 .top-nav {
     display: flex;
     flex-direction: row;
