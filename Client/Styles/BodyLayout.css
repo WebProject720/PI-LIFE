@@ -122,7 +122,7 @@ body {
     align-items: center;
 }
 .element-item:hover{
-    background-color: rgba(255, 255, 255, 0.601);
+    background-color: rgba(255, 255, 255, 0.849);
 }
 .top-nav {
     display: flex;
