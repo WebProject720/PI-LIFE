@@ -1,0 +1,18 @@
+.container {
+    padding: 15px;
+}
+
+.to-do {
+    background-color: rgba(255, 255, 255, 0.167);
+    width: fit-content;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.td-data {
+    padding: 5px 0px 5px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
