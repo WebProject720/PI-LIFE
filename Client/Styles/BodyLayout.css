@@ -2,7 +2,7 @@
     --aside-width: 8vw;
     --top-nav-height: 60px;
     --box-height: 150px;
-    --aside-border:4px;
+    --aside-border: 4px;
 }
 
 :root {
@@ -29,6 +29,9 @@
 body {
     position: relative;
     color: white;
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(23, 6, 88);
 }
 
 .top-nav {
@@ -39,9 +42,11 @@ body {
     width: calc(100% - var(--aside-width));
     /**/
 }
-.nav-form{
+
+.nav-form {
     padding-right: 15px;
 }
+
 .footer {
     background-color: rgb(29, 28, 28);
     min-height: 100%;
@@ -83,23 +88,7 @@ body {
     }
 }
 
-
-h1,
-p {
-    margin: 0%;
-    padding: 0%;
-}
-
-p {
-    padding: 10px;
-}
-
-body {
-    margin: 0%;
-    background-color: rgb(5, 5, 75);
-    padding: 0%;
-}
-.heading-section{
+.heading-section {
     padding-left: 15px;
 }
 
@@ -123,9 +112,11 @@ body {
     justify-content: center;
     align-items: center;
 }
-.element-item:hover{
+
+.element-item:hover {
     background-color: rgba(255, 255, 255, 0.849);
 }
+
 .top-nav {
     display: flex;
     flex-direction: row;
@@ -193,4 +184,19 @@ body {
     text-decoration: none;
     font-weight: bold;
     list-style: none;
+}
+
+/* absolute-box */
+
+.absolute-box {
+    width: 90vw;
+    height: 90vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -45vw;
+    margin-top: -45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
