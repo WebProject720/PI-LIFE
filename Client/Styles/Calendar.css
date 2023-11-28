@@ -1,99 +1,59 @@
-/* Calendat Section */
-
-.day {
-    background-color: white;
-    border: 1px solid black;
-    /* border-radius: 8px; */
-    min-height: 150px;
-    min-width: 150px;
-    width: 200px;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 20% 80%;
+.one-day>.number {
+    font-size: x-large;
 }
 
-.date-b {
-    align-items: center;
-    border-bottom: 2px solid black;
+.one-day {
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 10px;
+    width: fit-content;
 }
 
-.date-text {
-    font-size: large;
-    font-weight: 800;
-    padding: 0%;
-    margin: 0%;
-    padding: 2px;
+.sel-m-txt {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 5px;
 }
 
-.text {
+.selected-day {
+    background-color: rgba(255, 255, 255, 0.164);
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.textarea {
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid white;
+    color: white;
+    outline: 1px solid white;
+    resize: none;
+    overflow: auto;
+    padding: 3px;
+}
+
+.textarea::placeholder {
+    color: white;
+}
+
+.actions {
     display: flex;
     flex-direction: column;
+    gap: 4px;
+    align-items: end;
+    padding-top: 5px;
 }
 
-.msg-btn {
-    height: 20%;
+.btn-Clear {
     background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    padding: 4px;
-    align-items: center;
-    border-top: 1px solid black;
-}
-.words-limit{
-    border: 1px solid black;
-    padding: 0px 5px;
-    border-radius: 2px;
-    background-color: rgb(202, 202, 202);
-}
-
-.textarea-msg {
-    width: 95%;
-    height: 80%;
-    resize: none;
-    margin: 2px;
-    padding: 2px;
-    border: 0cap;
-    background-color: transparent;
-    font-size: large;
-    outline: none;
-}
-
-.textarea-msg::placeholder {
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.msg-btn-cl {
-    margin: 0%;
-    padding: 0%;
-    font-weight: 700;
-    padding: 0px 3px;
-    height: 95%;
-}
-
-/* Calendar Navbar */
-.nav-calendar {
-    background-color: rgb(217, 215, 215);
-    padding: 8px 5px;
-}
-
-.n-c {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-
-.select-c-box {
-    font-size: larger;
-    border: 1px solid black;
-    border-radius: 4px;
     outline: 0cap;
+    border: 0cap;
+    font-size: larger;
+    color: white;
 }
 
-.calendar-container {
-    padding: 7px;
-}
-.calendar{
-    display: none;
+.btn-Clear>p {
+    padding: 0cap;
+    margin: 0%;
 }

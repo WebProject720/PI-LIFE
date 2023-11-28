@@ -200,3 +200,6 @@ body {
     justify-content: center;
     align-items: center;
 }
+.displayNone{
+    display: none;
+}

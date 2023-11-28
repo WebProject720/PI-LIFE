@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do</title>
+    <link rel="stylesheet" href="/Client/Styles/BodyLayout.css" />
+    <link rel="stylesheet" href="/Client/Styles/Calendar.css" />
+  </head>
+
+  <body>
+    <div class="aside-nav">
+      <div class="elements">
+        <div class="">
+          <a
+            title="calendar"
+            class="element-item"
+            href="/Client/public/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/Client/Image/Calendar-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+        <div class="">
+          <a
+            title="notes"
+            class="element-item"
+            href="/Client/public/Note-list.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/Client/Image/Notes-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+        <div class="">
+          <a
+            title="to-do"
+            class="element-item"
+            href="/Client/public/ToDo.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/Client/Image/TO-DO-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+        <div class="">
+          <a
+            class="element-item"
+            title="profile"
+            href="/Client/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/Client/Image/transparent-profile-icon.svg"
+              alt
+              class="aside-icon"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="a-m-c">
+      <div class="top-nav">
+        <div class="heading-section">
+          <h1>Calendar</h1>
+        </div>
+        <div class="nav-form">
+          <button class="buttons">Month</button>
+          <button class="buttons">Year</button>
+        </div>
+      </div>
+      <div class="box">
+        <div class="container p-0">
+          <div class="calendar">
+            <div class="month-name"></div>
+            <div class="day-name-row"></div>
+            <div class="days">
+              <div class="one-day">
+                <div class="number">
+                  <center>
+                    <p>21</p>
+                  </center>
+                </div>
+                <div class="short-text">
+                  <button class="btn-Clear" onclick="showAddNote()">
+                    <p>
+                      Hello Sir...
+                    </p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute-box displayNone" id="absolute-box">
+            <div class="selected-day">
+              <div class="month">
+                <center>
+                  <p class="sel-m-txt">21 June</p>
+                </center>
+              </div>
+              <div class="note">
+                <form action="">
+                  <textarea
+                    class="textarea"
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="Enter Note"
+                  ></textarea>
+                </form>
+              </div>
+              <div class="actions">
+                <form action="">
+                  <button class="buttons" type="button" onclick="showAddNote()">Cancel</button>
+                  <button class="buttons" type="button">Save</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <h1>
+            <center>@copyright - All rights are reserved</center>
+          </h1>
+          <div class="list">
+            <center>
+              <ul class="ul-footer">
+                <li class="footer-item">Facebook</li>
+                <li class="footer-item">Telegram</li>
+                <li class="footer-item">Instagram</li>
+                <li class="footer-item">Whatsapp</li>
+              </ul>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="/Client/JS/calendar.js"></script>
