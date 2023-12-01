@@ -1,1 +1,0 @@
-config = { database: "MyDiary", collection: { users: "user", scheme: "scheme" }, path: "mongodb://127.0.0.1:27017" }
