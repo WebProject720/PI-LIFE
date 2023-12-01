@@ -7,6 +7,7 @@
     border-radius: 8px;
     padding: 10px;
     width: fit-content;
+    display: inline-block;
 }
 
 .sel-m-txt {
@@ -16,7 +17,7 @@
 }
 
 .selected-day {
-    background-color: rgba(255, 255, 255, 0.164);
+    background-color: rgb(15 15 60);
     border: 2px solid white;
     border-radius: 8px;
     padding: 10px;
@@ -56,4 +57,122 @@
 .btn-Clear>p {
     padding: 0cap;
     margin: 0%;
+}
+
+.calendar>.table-container {
+    width: 100%;
+    height: 100%;
+}
+
+.calendar>.table-container>.table {
+    width: 100%;
+}
+
+.table>thead>tr {
+    background-color: rgba(255, 255, 255, 0.184);
+    border: 2px solid white;
+}
+
+.table-tr>.table-data {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.name-month {
+    font: bold;
+    font-size: xx-large;
+}
+
+.table-tr>th {
+    font-size: large;
+    font-weight: bold;
+    padding: 5px 0px;
+}
+
+.nav-2-box,
+table,
+thead,
+tr {
+    width: 100%;
+}
+
+.nav-table-th {
+    background-color: #0800f7;
+    width: calc(100%/7);
+    font-size: larger;
+    padding: 5px;
+}
+
+.nav-1-box {
+    padding: 4px 0px;
+}
+
+:root {
+    --top-nav-height: 100px;
+}
+
+.month-name {
+    display: flex;
+    align-items: center;
+}
+
+.weak-short-name {
+    display: none;
+}
+
+@media screen and (max-width:1000px) {
+    .one-day {
+        padding: 2px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .nav-table-th {
+        font-size: small;
+        padding: 2px;
+    }
+
+    .table-tr>.table-data {
+        padding: 5px 1px;
+    }
+
+    .btn-Clear {
+        font-size: revert;
+    }
+
+    .weak-full-name {
+        display: none;
+    }
+    .weak-short-name{
+        display: flex;
+        gap: 1px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .nav-table-th {
+        font-size: small;
+        padding: 2px;
+    }
+
+    .one-day {
+        padding: 0%;
+    }
+
+    .name-month {
+        font-size: large;
+    }
+
+    :root {
+        --top-nav-height: 70px;
+    }
+    .btn-Clear {
+        font-size: 0.8em;
+    }
+}
+.nav-1-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
