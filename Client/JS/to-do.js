@@ -7,6 +7,7 @@ function fun(e) {
 }
 function addMoreTask(e) {
     let div = (e.parentElement.parentElement.previousElementSibling.lastElementChild.innerHTML);
+    console.log(div)
     // e.parentElement.parentElement.previousElementSibling.insertHTML += e.parentElement.parentElement.previousElementSibling.lastElementChild;
     // e.parentElement.parentElement.previousElementSibling.lastElementChild.classList.remove("displayNone");
     e.parentElement.parentElement.previousElementSibling.appendChild(div);
