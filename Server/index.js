@@ -18,16 +18,16 @@ app.get(('/todo'), (req, res) => {
 app.get('', (req, res) => {
     res.sendFile(ProfileFile);
 });
-app.get('/calendar',(req,res)=>{
+app.get('/calendar', (req, res) => {
     res.sendFile(CalendarFile);
 });
-app.get('/Note',(req,res)=>{
+app.get('/Note', (req, res) => {
     res.sendFile(NoteFile);
 });
-app.get('/NoteList',(req,res)=>{
+app.get('/NoteList', (req, res) => {
     res.sendFile(NoteListFile);
 });
-app.get('*',(req,res)=>{
+app.get('*', (req, res) => {
     res.sendFile(NotFileFound);
 });
 app.listen(config.port);

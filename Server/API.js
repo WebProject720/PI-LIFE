@@ -32,3 +32,8 @@ app.post('/putToDo', async (req, res) => {
     const result = await container.save();
     res.send(result);
 });
+app.get('/getToDo',async(req,res)=>{
+    const result=await Usermodel.find().toArray();
+    console.log(result);
+    res.send(result);
+});
