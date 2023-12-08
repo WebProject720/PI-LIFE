@@ -231,3 +231,8 @@ input.checkbox {
 .add-new>.to-do{
     background-color: transparent;
 }
+.task-box-new-temp{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
