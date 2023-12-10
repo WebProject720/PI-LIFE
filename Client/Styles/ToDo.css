@@ -6,8 +6,18 @@
     background-color: rgba(255, 255, 255, 0.167);
     padding: 10px;
     border-radius: 8px;
+    width: 30%;
 }
-
+@media screen and (max-width:950px) {
+    .to-do{
+        width: 45%;
+    }
+}
+@media screen and (max-width:650px) {
+    .to-do{
+        width: 100%;
+    }
+}
 .to-do-box {
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +26,9 @@
     align-content: center;
     gap: 10px;
 }
-
+.task-input-area{
+    width: 100%;
+}
 .td-data {
     display: flex;
     flex-direction: row;
@@ -228,11 +240,19 @@ input.checkbox {
     min-width: 95%;
     min-height: 95%;
 }
-.add-new>.to-do{
+
+.add-new>.to-do {
     background-color: transparent;
 }
-.task-box-new-temp{
+
+.task-box-new-temp {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.form {
+    display: flex;
+    gap: 4px;
+    flex-direction: row;
 }

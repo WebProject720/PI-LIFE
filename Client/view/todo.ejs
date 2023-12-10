@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do</title>
+  <link rel="stylesheet" href="/Styles/BodyLayout.css" />
+  <link rel="stylesheet" href="/Styles/ToDo.css" />
+  <link rel="shortcut icon" href="/Image/TO-DO-icon.svg" type="image/x-icon" />
+</head>
+
+<body>
+  <% function Month(num) { switch (num) { case 0: return "January" ; break; case 1: return "Febuary" ; break; case 2:
+    return "March" ; break; case 3: return "April" ; break; case 4: return "May" ; break; case 5: return "June" ; break;
+    case 6: return "July" ; break; case 7: return "August" ; break; case 8: return "September" ; break; case 9:
+    return "Octomber" ; break; case 10: return "November" ; break; case 11: return "December" ; break; default: break; }
+    } %>
+    <div class="aside-nav">
+      <div class="elements">
+        <div class="">
+          <a title="calendar" class="element-item" href="/Client/public/" target="_blank" rel="noopener noreferrer">
+            <img src="/Image/Calendar-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+        <div class="">
+          <a title="notes" class="element-item" href="/Client/public/Note-list.html" target="_blank"
+            rel="noopener noreferrer">
+            <img src="/Image/Notes-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+        <div class="">
+          <a title="to-do" class="element-item" href="/Client/public/ToDo.html" target="_blank"
+            rel="noopener noreferrer">
+            <img src="/Image/TO-DO-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+        <div class="">
+          <a class="element-item" title="profile" href="/Client/index.html" target="_blank" rel="noopener noreferrer">
+            <img src="/Image/transparent-profile-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="a-m-c">
+      <div class="top-nav">
+        <div class="heading-section">
+          <h1>To Do</h1>
+        </div>
+        <div class="nav-form">
+          <button class="buttons">Search</button>
+          <button onclick="showAddToDo()" class="buttons">Create To Do</button>
+        </div>
+      </div>
+      <div class="box">
+        <div class="container">
+          <div class="to-do-box" id="ToDo-Container">
+            <% data.forEach(element=> { %>
+              <div class="to-do">
+                <div class="td-time">
+                  <center>
+                    <p class="td-date">
+                      <span>
+                        <%= element.date.day%>
+                          <%= Month(element.date.month)%>
+                            <%= element.date.year%>
+                      </span>
+                    </p>
+                  </center>
+                </div>
+                <div class="td-content">
+                  <% element.tasks.forEach((e)=>{ %>
+                    <div class="td-data">
+                      <div class="td-checkbox">
+                        <div class="checkbox-wrapper-13">
+                          <input onchange="fun(this)" id="c1-13" type="checkbox" <% if(e.status){ %>checked<% } %> />
+                        </div>
+                      </div>
+                      <div class="td-task">
+                        <p class="task-p <% if(e.status){%> checked <%} %>">
+                          <span>
+                            <%=e.task %>
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                    <% }); %>
+                </div>
+                <div class="td-btns">
+                  <div class="add-btn">
+                    <button onclick="addMoreTask(this)" type="button" class="buttons-todo">
+                      <img src="/Image/Add-More-btn.svg" alt="Add More" class="img-size Add-more-img" /></button><button
+                      type="button" class="buttons-todo">
+                      <img src="/Image/Delete-icon.svg" class="img-size" alt="Delete" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <% }); %>
+          </div>
+          <div class="absolute-box displayNone" id="absolute-box">
+            <div class="add-new">
+              <div class="to-do add-new-todo">
+                <div class="td-time">
+                  <center>
+                    <p class="td-date">
+                      <span> 26 June 2023 </span>
+                    </p>
+                  </center>
+                </div>
+                <form action="" method="" id="NEW-TODO">
+                  <div class="td-content">
+                    <div class="task-box-new-temp" id="New-tasks-temp">
+                      <div class="td-data" id="">
+                        <div class="td-checkbox">
+                          <div class="checkbox-wrapper-13">
+                            <input onchange="fun(this)" id="c1-13" type="checkbox" disabled />
+                          </div>
+                        </div>
+                        <div class="td-task">
+                          <div class="form">
+                            <input class="task-input" type="text" name="task" id="" placeholder="Enter Task" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="td-data" id="">
+                        <div class="td-checkbox">
+                          <div class="checkbox-wrapper-13">
+                            <input onchange="fun(this)" id="c1-13" type="checkbox" disabled />
+                          </div>
+                        </div>
+                        <div class="td-task">
+                          <div class="form">
+                            <input class="task-input" type="text" name="task" id="" placeholder="Enter Task" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="td-btns">
+                      <div class="add-btn">
+                        <button onclick="addMoreTaskNew()" type="button" class="buttons">
+                          New
+                        </button>
+                      </div>
+                      <div>
+                        <input onclick="showAddToDo()" class="buttons" type="button" value="Cancel" />
+                        <input class="buttons" type="submit" value="Save" />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <h1>
+            <center>@copyright - All rights are reserved</center>
+          </h1>
+          <div class="list">
+            <center>
+              <ul class="ul-footer">
+                <li class="footer-item">Facebook</li>
+                <li class="footer-item">Telegram</li>
+                <li class="footer-item">Instagram</li>
+                <li class="footer-item">Whatsapp</li>
+              </ul>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
+<script src="./src/Main/todo.js"></script>
