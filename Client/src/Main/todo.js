@@ -10,7 +10,7 @@ function fun(e) {
     }
 }
 
-function addMoreTask(e) {
+function addMoreTask(e, id) {
     // Create the outermost div with class 'td-data'
     var tdDataDiv = document.createElement("div");
     tdDataDiv.classList.add("td-data");
@@ -41,18 +41,20 @@ function addMoreTask(e) {
     tdTaskDiv.classList.add("td-task");
 
     // Create the div with class 'form'
-    var formDiv = document.createElement("div");
+    var formDiv = document.createElement("form");
     formDiv.classList.add("form");
+    formDiv.onsubmit = updateToDo.bind(null, id);
 
     // Create the input element with class 'task-input' and specified attributes
     var taskInput = document.createElement("input");
     taskInput.classList.add("task-input");
     taskInput.classList.add("task-input-area");
     taskInput.setAttribute("type", "text");
-    taskInput.setAttribute("name", "task");
+    taskInput.setAttribute("name", "taskInput");
     taskInput.setAttribute("placeholder", "Enter Task");
 
     var taskInput2 = document.createElement("input");
+    taskInput2.setAttribute("name", "submitBtn");
     taskInput2.classList.add("task-input");
     taskInput2.setAttribute("type", "submit");
     taskInput2.setAttribute("value", "Save");
@@ -140,10 +142,16 @@ function showAddToDo() {
 
 //Submit NEW todo .then
 let href = window.location.href;
+let url = "http://localhost:5000";
 document.getElementById("NEW-TODO").addEventListener("submit", async function (e) {
     e.preventDefault();
     let form = new FormData(e.target);
     let data = form.getAll("task");
+    data.forEach((e) => {
+        if (e == '') {
+            data.pop(e);
+        }
+    });
     data = { task: data };
     let jsonData = JSON.stringify(data);
     console.log(jsonData);
@@ -160,3 +168,50 @@ document.getElementById("NEW-TODO").addEventListener("submit", async function (e
         window.location.reload();
     }
 });
+
+//Delete Function
+async function Delete(e) {
+    e = { "_id": e };
+    let data = JSON.stringify(e);
+    const response = await fetch(url + '/delToDo', {
+        method: "DELETE", body: data, headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+    if (response.ok) {
+        window.location.reload();
+    } else {
+        console.log(new Error("Something Wrong"));
+    }
+}
+async function UpdateStatus(e, element) {
+    e = { "status": element.checked, "__id": e };
+    data = JSON.stringify(e);
+    const response = await fetch(url + '/UpdateStatus', {
+        method: "PUT",
+        body: data,
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+    if (!response.ok) {
+        console.log(response);
+    }
+}
+async function updateToDo(id, e) {
+    e.preventDefault();
+    let FromData = (e.target.taskInput.value);
+    let data = JSON.stringify({ data: FromData, id: id });
+    let response = await fetch(url + '/Update', {
+        body: data,
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+    if (!response.ok) {
+        console.log("ERROR : ", response);
+    } else {
+        window.location.reload();
+    }
+}

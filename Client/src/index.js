@@ -27,11 +27,7 @@ async function GetData(apiUrl) {
 app.get(('/todo'), async (req, res) => {
     const apiUrl = "http://localhost:5000/getToDo";
     const data = await GetData(apiUrl);
-    if (data != false) {
-        res.render(ToDoFile, { data });
-    } else {
-        res.sendFile(NotFileFound);
-    }
+    res.render(ToDoFile, { data });
 });
 app.get('', (req, res) => {
     res.sendFile(ProfileFile);

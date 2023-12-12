@@ -32,7 +32,7 @@
 .td-data {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
 }
@@ -88,16 +88,16 @@ input.checkbox {
 
 /* / */
 .task-input {
-    background-color: transparent;
+    background-color: #6280d7;
     padding: 4px;
     color: white;
     font-weight: bold;
     font-size: large;
     border-color: white;
-    border: 2px solid white;
-    outline: 2px white;
+    border: 0px solid white;
+    outline: 0px white;
     outline-color: white;
-    border-radius: 0%;
+    border-radius: 4px;
 }
 
 .task-input::placeholder {
@@ -233,7 +233,7 @@ input.checkbox {
 .add-new {
     border: 2px solid white;
     border-radius: 8px;
-    background-color: #050f32;
+    background-color: #3e58b3;
 }
 
 .add-new-todo {
