@@ -1,4 +1,3 @@
-var ObjectId = require("mongodb").ObjectId;
 const mongoose = require("mongoose");
 //required config Data for jeneralise API
 //collection name
@@ -8,11 +7,6 @@ const mongoose = require("mongoose");
 //DELETE : Object identifier for Delete DATA
 //UPDATE :
 //SEARCH :
-const Obj = {
-    collectionName: String,
-    Schema: Object,
-    action: { name: "REQUEST", data: "KEY/OBJECT" },
-};
 function API(app) {
     //API for send DATA to MongoDB Server
     //Send To-Do data to Database
@@ -136,27 +130,5 @@ function API(app) {
         res.send(result);
     });
 
-    //Send And Get Data API for Calendar Notes
-    const CalSchema = new mongoose.Schema({
-        date: Object,
-        time: Object,
-        content: Array,
-    });
-    data = {
-        date: { month: 12, year: 2022, day: 26 },
-        time: { hour: 23, minute: 56 },
-        content: [{ text: "Hello World" }],
-    };
-    app.get("/getCal", async (req, res) => {
-        const NoteModel = mongoose.model("calendar", NoteSchema, "calendar");
-        const result = await NoteModel.find();
-        res.send(result);
-    });
-    app.post("/postCal", async (req, res) => {
-        const NoteModel = mongoose.model("calendar", NoteSchema, "calendar");
-        const container = new NoteModel(data);
-        const result = await container.save();
-        res.send(result);
-    });
 }
 module.exports = API;
