@@ -125,11 +125,20 @@ body {
 }
 
 .buttons {
-    padding: 4px;
+    /* padding: 4px;
     border-radius: 5px;
     background-color: rgba(240, 248, 255, 0.151);
     border: 2px solid white;
     outline: 2px;
+    outline-color: white;
+    color: white;
+    font-size: large;
+    margin: 0px 4px; */
+    padding: 5px 11px;
+    border-radius: 0px;
+    background-color: rgb(255 255 255 / 50%);
+    border: 0px solid white;
+    outline: 0px;
     outline-color: white;
     color: white;
     font-size: large;

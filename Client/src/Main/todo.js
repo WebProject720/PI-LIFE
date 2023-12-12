@@ -147,23 +147,22 @@ document.getElementById("NEW-TODO").addEventListener("submit", async function (e
     e.preventDefault();
     let form = new FormData(e.target);
     let data = form.getAll("task");
-    data.forEach((e) => {
-        if (e == '') {
-            data.pop(e);
+    data = data.filter(e => e !== '');
+    if (data.length > 0) {
+        data = { task: data };
+        let jsonData = JSON.stringify(data);
+        const response = await fetch(url + "/PostToDo", {
+            method: "post",
+            body: jsonData,
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
+        if (!response.ok) {
+            console.log("Data Not POST ");
+        } else {
+            window.location.reload();
         }
-    });
-    data = { task: data };
-    let jsonData = JSON.stringify(data);
-    console.log(jsonData);
-    const response = await fetch("http://localhost:5000/PostToDo", {
-        method: "post",
-        body: jsonData,
-        headers: {
-            "Content-Type": "application/json",
-        }
-    });
-    if (!response.ok) {
-        console.log("Data Not POST ");
     } else {
         window.location.reload();
     }
