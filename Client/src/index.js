@@ -10,9 +10,9 @@ const NoteListFile = (`F:\\Projects\\PI LIFE\\Client\\view\\Note-list.ejs`);
 const CalendarFile = (`F:\\Projects\\PI LIFE\\Client\\view\\Calendar.ejs`);
 const NotFileFound = (`F:\\Projects\\PI LIFE\\Client\\view\\NotFound.ejs`);
 app.use(express.static('F:\\Projects\\PI LIFE\\Client'));
-async function GetData(apiUrl) {
+async function GetData(apiUrl, req) {
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl,req);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -23,16 +23,32 @@ async function GetData(apiUrl) {
         return false;
     }
 }
+const URL = "http://localhost:5000";
 app.get(('/todo'), async (req, res) => {
-    const apiUrl = "http://localhost:5000/getToDo";
-    const data = await GetData(apiUrl);
+    const data = await GetData(URL + '/getToDo');
     res.render(ToDoFile, { data });
 });
 app.get('', (req, res) => {
     res.render(ProfileFile);
 });
-app.get('/calendar', (req, res) => {
-    res.render(CalendarFile);
+app.get('/calendar', async (req, res) => {
+    const d = new Date();
+    let request = {
+        request: {
+            month: d.getMonth(),
+            year: d.getFullYear(),
+            date: d.getDate()
+        }
+    }
+    request = JSON.stringify(request);
+    const Data = await GetData(URL + '/getCal', {
+        method: "POST",
+        body: request,
+        headers: {
+            "Content-Type": "application/json",
+        }
+    });
+    res.render(CalendarFile, { Data });
 });
 app.get('/Note', (req, res) => {
     res.render(NoteFile);

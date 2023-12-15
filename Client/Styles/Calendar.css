@@ -6,10 +6,14 @@
     border: 2px solid white;
     border-radius: 8px;
     padding: 10px;
-    width: fit-content;
     display: inline-block;
     margin: 10px 0px;
 }
+
+.one-day:first-child {
+    border: 0px;
+}
+
 .sel-m-txt {
     font-size: xx-large;
     font-weight: bold;

@@ -90,10 +90,10 @@
                 <div class="td-btns">
                   <div class="add-btn">
                     <button onclick="addMoreTask(this,'<%=element._id%>')" type="button" class="buttons-todo">
-                      <img src="/Image/Add-More-btn.svg" alt="Add More" class="img-size Add-more-img" /></button><button
-                      type="button" class="buttons-todo">
-                      <img src="/Image/Delete-icon.svg" onclick="Delete('<%= element._id %>')" class="img-size"
-                        alt="Delete" />
+                      <img src="/Image/Add-More-btn.svg" alt="Add More"
+                        class="img-size Add-more-img icon-shadow" /></button><button type="button" class="buttons-todo">
+                      <img src="/Image/Delete-icon.svg" onclick="Delete('<%= element._id %>')"
+                        class="img-size icon-shadow" alt="Delete" />
                     </button>
                   </div>
                 </div>
@@ -106,7 +106,9 @@
                 <div class="td-time">
                   <center>
                     <p class="td-date">
-                      <span> 26 June 2023 </span>
+                      <span>
+                        <%= new Date().getDate() %> - <%= new Date().getMonth() +1%> - <%= new Date().getFullYear() %>
+                      </span>
                     </p>
                   </center>
                 </div>

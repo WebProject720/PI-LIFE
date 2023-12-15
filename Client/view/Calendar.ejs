@@ -11,345 +11,154 @@
 </head>
 
 <body>
-  <div class="aside-nav">
-    <div class="elements">
-      <div class="">
-        <a title="calendar" class="element-item" href="/public/" target="_blank" rel="noopener noreferrer">
-          <img src="/Image/Calendar-icon.svg" alt class="aside-icon" />
-        </a>
-      </div>
-      <div class="">
-        <a title="notes" class="element-item" href="/public/Note-list.html" target="_blank" rel="noopener noreferrer">
-          <img src="/Image/Notes-icon.svg" alt class="aside-icon" />
-        </a>
-      </div>
-      <div class="">
-        <a title="to-do" class="element-item" href="/public/ToDo.html" target="_blank" rel="noopener noreferrer">
-          <img src="/Image/TO-DO-icon.svg" alt class="aside-icon" />
-        </a>
-      </div>
-      <div class="">
-        <a class="element-item" title="profile" href="/index.html" target="_blank" rel="noopener noreferrer">
-          <img src="/Image/transparent-profile-icon.svg" alt class="aside-icon" />
-        </a>
+  <% function Month(num) { switch (num) { case 0: return "January" ; break; case 1: return "Febuary" ; break; case 2:
+    return "March" ; break; case 3: return "April" ; break; case 4: return "May" ; break; case 5: return "June" ; break;
+    case 6: return "July" ; break; case 7: return "August" ; break; case 8: return "September" ; break; case 9:
+    return "Octomber" ; break; case 10: return "November" ; break; case 11: return "December" ; break; default: break; }
+    }; function Day(num) { switch (num) { case 0: return "Sunday" ; break; case 1: return "Monday" ; break; case 2:
+    return "Tuesday" ; break; case 3: return "Wednesday" ; break; case 4: return "Thrusday" ; break; case 5:
+    return "Friday" ; break; case 6: return "Saturday" ; break; default: return undefined; break; } }%>
+    <div class="aside-nav">
+      <div class="elements">
+        <div class="">
+          <a title="calendar" class="element-item" href="/public/" target="_blank" rel="noopener noreferrer">
+            <img src="/Image/Calendar-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+        <div class="">
+          <a title="notes" class="element-item" href="/public/Note-list.html" target="_blank" rel="noopener noreferrer">
+            <img src="/Image/Notes-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+        <div class="">
+          <a title="to-do" class="element-item" href="/public/ToDo.html" target="_blank" rel="noopener noreferrer">
+            <img src="/Image/TO-DO-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
+        <div class="">
+          <a class="element-item" title="profile" href="/index.html" target="_blank" rel="noopener noreferrer">
+            <img src="/Image/transparent-profile-icon.svg" alt class="aside-icon" />
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="a-m-c">
-    <div class="top-nav">
-      <div class="nav-1-box">
-        <div class="heading-section">
-          <h1 class="marpad-0">Calendar</h1>
-        </div>
-        <div class="month-name">
-          <p class="name marpad-0">
-            <center class="name-month">November</center>
-          </p>
-        </div>
-        <div class="nav-form">
-          <button class="buttons">Month</button>
-          <button class="buttons">Year</button>
-        </div>
-      </div>
-      <div class="nav-2-box">
-        <table>
-          <thead>
-            <tr class="weak-full-name">
-              <th class="nav-table-th">Sunday</th>
-              <th class="nav-table-th">Monday</th>
-              <th class="nav-table-th">Tuesday</th>
-              <th class="nav-table-th">Wednesday</th>
-              <th class="nav-table-th">Thursday</th>
-              <th class="nav-table-th">Friday</th>
-              <th class="nav-table-th">Saturday</th>
-            </tr>
-            <tr class="weak-short-name">
-              <th class="nav-table-th">Sun</th>
-              <th class="nav-table-th">Mon</th>
-              <th class="nav-table-th">Tue</th>
-              <th class="nav-table-th">Wed</th>
-              <th class="nav-table-th">Thur</th>
-              <th class="nav-table-th">Fri</th>
-              <th class="nav-table-th">Sat</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    </div>
-    <div class="box">
-      <div class="container p-0">
-        <div class="calendar">
-          <div class="table-container">
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
-            <div class="one-day">
-              <div class="number">
-                <center>
-                  <p>21</p>
-                </center>
-              </div>
-              <div class="short-text">
-                <button type="button" class="btn-Clear" onclick="showAddNote()">
-                  <p>Hello Sir...</p>
-                </button>
-              </div>
-            </div>
+    <div class="a-m-c">
+      <div class="top-nav">
+        <div class="nav-1-box">
+          <div class="heading-section">
+            <h1 class="marpad-0">Calendar</h1>
           </div>
-        </div>
-        <div class="absolute-box displayNone" id="absolute-box">
-          <div class="selected-day">
-            <div class="month">
-              <center>
-                <p class="sel-m-txt">21 June</p>
+          <div class="month-name">
+            <p class="name marpad-0">
+              <center class="name-month">
+                <%= Month(Data[0].name) %>
               </center>
+            </p>
+          </div>
+          <div class="nav-form">
+            <button class="buttons">Month</button>
+            <button class="buttons">Year</button>
+          </div>
+        </div>
+        <div class="nav-2-box">
+          <table>
+            <thead>
+              <tr class="weak-full-name">
+                <th class="nav-table-th">Sunday</th>
+                <th class="nav-table-th">Monday</th>
+                <th class="nav-table-th">Tuesday</th>
+                <th class="nav-table-th">Wednesday</th>
+                <th class="nav-table-th">Thursday</th>
+                <th class="nav-table-th">Friday</th>
+                <th class="nav-table-th">Saturday</th>
+              </tr>
+              <tr class="weak-short-name">
+                <th class="nav-table-th">Sun</th>
+                <th class="nav-table-th">Mon</th>
+                <th class="nav-table-th">Tue</th>
+                <th class="nav-table-th">Wed</th>
+                <th class="nav-table-th">Thur</th>
+                <th class="nav-table-th">Fri</th>
+                <th class="nav-table-th">Sat</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <div class="box">
+        <div class="container p-0">
+          <div class="calendar">
+            <div class="table-container">
+              <div class="one-day"
+                style="grid-column:span <%= Data[0].month[0].date.day  %> ;  display:<% if(Data[0].month[0].date.day==0){ %>none<%}else{%>unset<%}%>">
+              </div>
+              <% Data[0].month.forEach(element=> { %>
+                <div class="one-day">
+                  <div class="number">
+                    <center>
+                      <p>
+                        <%= element.date.date %>
+                      </p>
+                    </center>
+                  </div>
+                  <div class="short-text">
+                    <button type="button" class="btn-Clear" data-year="<%= element.date.year %>" data-date="<%=element.date.date  %>" data-month="<%= element.date.month %>"
+                      onclick="showAddNote(this)">
+                      <p>
+                        <%= element.content %>
+                      </p>
+                    </button>
+                  </div>
+                </div>
+                <% }); %>
             </div>
-            <div class="note">
-              <form action="">
-                <textarea class="textarea" name="" id="" cols="30" rows="10" placeholder="Enter Note"></textarea>
-              </form>
-            </div>
-            <div class="actions">
-              <form action="">
-                <button class="buttons" type="button" onclick="showAddNote()">
-                  Cancel
-                </button>
-                <button class="buttons" type="button">Save</button>
-              </form>
+          </div>
+          <div class="absolute-box displayNone" id="absolute-box">
+            <div class="selected-day">
+              <div class="month">
+                <center>
+                  <p class="sel-m-txt">
+                    <span id="date-new-note">
+                      <!-- date -->
+                    </span>
+                    <span>
+                      <%= Month(Data[0].name) %>
+                    </span>
+                  </p>
+                </center>
+              </div>
+              <div class="note">
+                <form id="newNoteForm">
+                  <textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10"
+                    placeholder="Enter Note"></textarea>
+                  <div class="actions">
+                    <button class="buttons" type="button" onclick="showAddNote(null)">
+                      Cancel
+                    </button>
+                    <input type="submit" name="submit" value="Save" class="buttons">
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="footer">
-        <h1>
-          <center>@copyright - All rights are reserved</center>
-        </h1>
-        <div class="list">
-          <center>
-            <ul class="ul-footer">
-              <li class="footer-item">Facebook</li>
-              <li class="footer-item">Telegram</li>
-              <li class="footer-item">Instagram</li>
-              <li class="footer-item">Whatsapp</li>
-            </ul>
-          </center>
+        <div class="footer">
+          <h1>
+            <center>@copyright - All rights are reserved</center>
+          </h1>
+          <div class="list">
+            <center>
+              <ul class="ul-footer">
+                <li class="footer-item">Facebook</li>
+                <li class="footer-item">Telegram</li>
+                <li class="footer-item">Instagram</li>
+                <li class="footer-item">Whatsapp</li>
+              </ul>
+            </center>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </body>
 
 </html>

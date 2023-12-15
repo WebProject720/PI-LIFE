@@ -1,13 +1,31 @@
 const mongoose = require("mongoose");
-function data(text) {
-    const date = new Date;
-    const Obj = {
-        "date": { "month": date.getMonth(), "year": date.getFullYear(), "date": date.getDate() },
-        "time": { "hh": date.getHours(), "mm": date.getMinutes() },
-        "content": text,
-        "lastUpdate": []
+function MonthDays(month, year) {
+    if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11) {
+        return 31;
+    } else if (month == 1) {
+        if (year % 4 == 0 || year % 100 == 0) {
+            return 29;
+        }
+        else {
+            return 28;
+        }
+    } else {
+        return 30;
     }
-    return Obj;
+}
+function Month(obj) {
+    const array = [];
+    for (let i = 1; i <= MonthDays(obj.month, obj.year); i++) {
+        let date = new Date(obj.year, obj.month, i);
+        let object = {
+            "date": { "month": date.getMonth(), "year": date.getFullYear(), "date": date.getDate(), "day": (date.getDay()) },
+            "time": { "hh": undefined, "mm": undefined },
+            "content": "Hello World",
+            "lastUpdate": []
+        }
+        array.push(object);
+    }
+    return array;
 }
 function API(app) {
     const schema = new mongoose.Schema({
@@ -23,8 +41,9 @@ function API(app) {
         lastUpdate: []
     };
     const Model = mongoose.model("calendar", schema, "calendar");
-    app.get("/getCal", async (req, res) => {
-        const result = await Model.find();
+    app.post("/getCal", async (req, res) => {
+        // const result = await Model.find();
+        result = [{ "month": Month({ month: req.body.request.month, year: req.body.request.year }), "name": req.body.request.month }]
         res.send(result);
     });
     app.post("/postCal", async (req, res) => {
