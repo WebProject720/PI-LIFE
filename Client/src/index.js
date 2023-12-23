@@ -12,7 +12,7 @@ const NotFileFound = (`F:\\Projects\\PI LIFE\\Client\\view\\NotFound.ejs`);
 app.use(express.static('F:\\Projects\\PI LIFE\\Client'));
 async function GetData(apiUrl, req) {
     try {
-        const response = await fetch(apiUrl,req);
+        const response = await fetch(apiUrl, req);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -40,6 +40,11 @@ app.get('/calendar', async (req, res) => {
             date: d.getDate()
         }
     }
+    if(req.query.month!=null || req.query.month!=undefined ){
+        request.request.month=Number(req.query.month);
+        request.request.year=Number(req.query.year)
+        console.log(request.request.year,request.request.month);
+    }
     request = JSON.stringify(request);
     const Data = await GetData(URL + '/getCal', {
         method: "POST",
@@ -50,6 +55,7 @@ app.get('/calendar', async (req, res) => {
     });
     res.render(CalendarFile, { Data });
 });
+
 app.get('/Note', (req, res) => {
     res.render(NoteFile);
 });

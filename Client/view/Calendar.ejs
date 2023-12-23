@@ -56,8 +56,24 @@
             </p>
           </div>
           <div class="nav-form">
-            <button class="buttons">Month</button>
-            <button class="buttons">Year</button>
+            <form action="" id="searchForm">
+              <select name="month" id="" class="buttons" title="month">
+                <option value="0">January</option>
+                <option value="1">Febuary</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">Octomber</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+              </select>
+              <input type="number" class="number buttons" name="year" id="" value="<%= Data[0].month[0].date.year %>" max="2050" min="2000" placeholder='YEAR'>
+              <input class="buttons" type="submit" value="Go">
+            </form>
           </div>
         </div>
         <div class="nav-2-box">
@@ -102,15 +118,30 @@
                     </center>
                   </div>
                   <div class="short-text">
-                    <button type="button" class="btn-Clear" data-year="<%= element.date.year %>" data-date="<%=element.date.date  %>" data-month="<%= element.date.month %>"
-                      onclick="showAddNote(this)">
+                    <button type="button" class="btn-Clear" data-year="<%= element.date.year %>"
+                      data-date="<%=element.date.date  %>" data-month="<%= element.date.month %>"
+                      onclick="showAddNote(this)" data-Content="<%= element.content  %>">
                       <p>
-                        <%= element.content %>
+                        <% if(element.content!='*' ){ %>
+                          <%= (element.content).substring(0,10) + '...' %>
+                            <% }else{ %>
+                              <%= element.content %>
+                                <% } %>
                       </p>
                     </button>
                   </div>
                 </div>
                 <% }); %>
+            </div>
+            <div class="newMonth-container">
+              <div class="previous-month">
+                <button data-year="<%= Data[0].month[0].date.year  %>" name-month="<%= Data[0].name %>"
+                  onclick="NewMonth(this,-1)" class="NewMonthBtn">Previous Month</button>
+              </div>
+              <div class="next-month">
+                <button data-year="<%= Data[0].month[0].date.year  %>" name-month="<%= Data[0].name %>"
+                  onclick="NewMonth(this,1)" class="NewMonthBtn">Next Month</button>
+              </div>
             </div>
           </div>
           <div class="absolute-box displayNone" id="absolute-box">
@@ -163,4 +194,4 @@
 
 </html>
 <script src="/JS/calendar.js"></script>
-<script src="./src/Main/CalendarBack.js"></script>
+<script src="/src/Main/CalendarBack.js"></script>

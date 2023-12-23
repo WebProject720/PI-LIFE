@@ -141,7 +141,6 @@ function showAddToDo() {
 
 
 //Submit NEW todo .then
-let href = window.location.href;
 let url = "http://localhost:5000";
 document.getElementById("NEW-TODO").addEventListener("submit", async function (e) {
     e.preventDefault();
