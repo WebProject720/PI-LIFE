@@ -26,6 +26,7 @@ async function PostNote(e) {
     });
     if (response.ok) {
         showAddNote(null);
+        location.reload()
     } else {
         console.log(response);
     }

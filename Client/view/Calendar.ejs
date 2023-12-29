@@ -103,7 +103,7 @@
       </div>
       <div class="box">
         <div class="container p-0">
-          <div class="calendar">
+          <div class="calendar container-child">
             <div class="table-container">
               <div class="one-day"
                 style="grid-column:span <%= Data[0].month[0].date.day  %> ;  display:<% if(Data[0].month[0].date.day==0){ %>none<%}else{%>unset<%}%>">
@@ -120,7 +120,7 @@
                   <div class="short-text">
                     <button type="button" class="btn-Clear" data-year="<%= element.date.year %>"
                       data-date="<%=element.date.date  %>" data-month="<%= element.date.month %>"
-                      onclick="showAddNote(this)" data-Content="<%= element.content  %>">
+                      onclick="showAddNote(this);Opacity()" data-Content="<%= element.content  %>">
                       <p>
                         <% if(element.content!='*' ){ %>
                           <%= (element.content).substring(0,10) + '...' %>
@@ -163,10 +163,10 @@
                   <textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10"
                     placeholder="Enter Note"></textarea>
                   <div class="actions">
-                    <button class="buttons" type="button" onclick="showAddNote(null)">
+                    <button class="buttons" type="button" onclick="showAddNote(null);Opacity()">
                       Cancel
                     </button>
-                    <input type="submit" name="submit" value="Save" class="buttons">
+                    <input onclick="Opacity()" type="submit" name="submit" value="Save" class="buttons">
                   </div>
                 </form>
               </div>
@@ -195,3 +195,4 @@
 </html>
 <script src="/JS/calendar.js"></script>
 <script src="/src/Main/CalendarBack.js"></script>
+<script src="/JS/BODYJS.js"></script>
