@@ -42,8 +42,11 @@
     resize: none;
     overflow: auto;
     padding: 3px;
-    width: 80vw;
+    width: 40vw;
     height: 50vh;
+    padding: 10px;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .textarea::placeholder {
