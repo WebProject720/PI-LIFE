@@ -112,6 +112,7 @@
     border: 0px;
     outline: 0px;
     overflow: hidden;
+    max-width: 100vw;
 }
 .page-form {
     display: flex;
@@ -187,4 +188,13 @@
 .numberBtn{
     width: 100%;
     box-sizing: border-box;
+}
+/*  */
+@media screen and (max-width:600px) {
+    .right-box{
+        display: none !important;
+    }
+    .notes-container{
+        grid-template-columns: auto;
+    }
 }

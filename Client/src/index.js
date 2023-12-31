@@ -57,8 +57,6 @@ app.get('/calendar', async (req, res) => {
 });
 
 app.get('/Note',async (req, res) => {
-    // let data=await (await fetch(URL+`/getNotes?q=${req.query.note}`)).json();
-    // document.getElementById('pageTextarea').value=(data[0]).content;
     res.render(NoteFile,{});
 });
 app.get('/NoteList',async (req, res) => {

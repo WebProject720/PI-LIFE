@@ -247,3 +247,16 @@ select>option{
     background-color: #1a1939;
     border: 2px solid white;
 }
+
+/* media Query */
+@media screen and (max-width:1100px) {
+    .heading-section{
+        display: none;
+    }
+    .width33{
+        width: auto;
+    }
+    .nav-1-box{
+        justify-content: space-around;
+    }
+}

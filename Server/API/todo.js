@@ -126,11 +126,11 @@ function API(app) {
         const result = await container.save();
         res.send(result);
     });
-    app.delete('/deleteNote',async(req,res)=>{
-        let response=await NoteModel.deleteOne(req.body);
+    app.delete('/deleteNote', async (req, res) => {
+        let response = await NoteModel.deleteOne(req.body);
         res.send(response);
     })
-    app.put("/UpdateNote",async(req,res)=>{
+    app.put("/UpdateNote", async (req, res) => {
         const dataObj = new Date;
         const date = {
             "month": dataObj.getMonth(),
@@ -141,21 +141,85 @@ function API(app) {
             "hh": dataObj.getHours(),
             "mm": dataObj.getMinutes()
         }
-        let obj={
-            date:date,
-            time:time,
-            lastUpdate:[[date,time]],
-            style:req.body.style,
-            name:req.body.name,
-            content:req.body.content
+        let obj = {
+            date: date,
+            time: time,
+            lastUpdate: [[date, time]],
+            style: req.body.style,
+            name: req.body.name,
+            content: req.body.content
         }
-        if(req.body.PreName!=null){
-            obj.PreName=req.body.PreName
-        }else{
-            obj.PreName=req.body.name
+        if (req.body.PreName != null) {
+            obj.PreName = req.body.PreName
+        } else {
+            obj.PreName = req.body.name
         }
-        let response=await NoteModel.findOneAndUpdate({name:obj.PreName},{$set:{content:obj.content,style:obj.style,name:obj.name}});
+        let response = await NoteModel.findOneAndUpdate({ name: obj.PreName }, { $set: { content: obj.content, style: obj.style, name: obj.name } });
         res.send(response);
     });
+
+
+    //Calendar
+    function MonthDays(month, year) {
+        if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11) {
+            return 31;
+        } else if (month == 1) {
+            if (year % 4 == 0 || year % 100 == 0) {
+                return 29;
+            }
+            else {
+                return 28;
+            }
+        } else {
+            return 30;
+        }
+    }
+    function Month(obj, data) {
+        const array = [];
+        for (let i = 1; i <= MonthDays(obj.month, obj.year); i++) {
+            let date = new Date(obj.year, obj.month, i);
+            let object = {
+                "date": { "month": date.getMonth(), "year": date.getFullYear(), "date": date.getDate(), "day": (date.getDay()) },
+                "time": {},
+                "content": "*",
+                "lastUpdate": []
+            }
+            array.push(object);
+        }
+        data.forEach(element => {
+            array.forEach(e => {
+                if ((e.date.date) == (element.date.date)) {
+                    e.content = element.content;
+                }
+            });
+        });
+        return array;
+    }
+    const schema = new mongoose.Schema({
+        "date": Object,
+        "time": Object,
+        "content": String,
+        "lastUpdate": Array
+    });
+    const Model = mongoose.model("calendar", schema, "calendar");
+    app.post("/getCal", async (req, res) => {
+        const data = await Model.find({ 'date.month': Number(req.body.request.month), 'date.year': Number(req.body.request.year) }).select('date content');
+        result = [{ "month": Month({ month: req.body.request.month, year: req.body.request.year }, data), "name": req.body.request.month }]
+        res.send(result);
+    });
+    app.post("/postCal", async (req, res) => {
+        const container = new Model(req.body);
+        const result = await container.save();
+        res.send(result);
+    });
+
+    //Count API
+    app.get("/count", async (req, res) => {
+        let response = {};
+        response.notes = await NoteModel.countDocuments({});
+        response.todo = await Usermodel.countDocuments();
+        response.remainder = await Model.countDocuments();
+        res.send(response);
+    })
 }
 module.exports = API;
