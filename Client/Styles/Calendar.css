@@ -4,13 +4,16 @@
 }
 
 .one-day {
-    border: 2px solid white;
+    border: 2px solid #ffffff33;
     border-radius: 8px;
     padding: 10px;
     display: inline-block;
     margin: 10px 0px;
+    background-color: #ffffff17;
 }
-
+.Bg-Color{
+    background-color: transparent;
+}
 .one-day:first-child {
     border: 0px;
 }
@@ -112,14 +115,14 @@ tr {
 }
 
 .nav-table-th {
-    background-color: #0800f7;
+    background-color: #1b1a44;
     width: calc(100%/7);
     font-size: larger;
     padding: 5px;
 }
 
 .nav-1-box {
-    padding: 4px 0px;
+    padding: 10px 0px;
 }
 
 :root {
@@ -129,6 +132,7 @@ tr {
 .month-name {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .weak-short-name {
@@ -228,4 +232,15 @@ select>option{
 }
 .number::placeholder{
     color: white;
+}
+.width33{
+    width: 33.3%;
+}
+.nav-form{
+    display: flex;
+    justify-content: end;
+}
+.todayDiv{
+    background-color: #1a1939;
+    border: 2px solid white;
 }

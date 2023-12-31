@@ -24,7 +24,7 @@
 .to-do-box {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-around;
     align-content: center;
     gap: 10px;

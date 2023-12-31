@@ -21,20 +21,28 @@
 
 .list-notes>.list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgb(255 255 255 / 4%);
+    background-color: rgb(212 212 212 / 32%);
     border-radius: 8px;
-    padding: 5px 0px;
+    padding: 5px 20px;
 }
-
+.img-icon,.options-menu{
+    width: fit-content;
+}
+.date-text,.name-note{
+    width: 30%;
+}
 .list-head {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 15px;
 }
-
+.text{
+    font-size: large;
+    font-weight: bold;
+}
 .container {
     padding: 20px;
 }
@@ -83,37 +91,42 @@
 
 .notes-container>.right-box {
     height: 100%;
-    background-color: black;
+    background-color: rgb(9, 25, 108);
+    display: flex;
+    padding: 20px 5px;
+    justify-content: center;
 }
 
 .textarea {
     height: 900px;
     width: 80%;
-    padding: 0px;
-    margin: 0px;
-    background-color: rgba(255, 255, 255, 0.136);
-    color: white;
+    background-color: white;
+    color: black;
     font-size: larger;
-    border-radius: 5px;
-    resize: vertical;
-    padding: 5px;
+    border-radius: 0px;
+    resize: none;
     border-color: white;
     outline-color: white;
-    padding: 10px;
+    padding:50px 20px;
     font-family: 'Times New Roman', Times, serif;
+    border: 0px;
+    outline: 0px;
+    overflow: hidden;
 }
-
-.textarea::placeholder {
-    color: rgb(154, 152, 152);
-    font-family: 'Times New Roman', Times, serif;
-}
-
 .page-form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 80px;
 }
-
+.size100>.actions{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 .toggle-btn {
     border: 0cap;
     outline: 0cap;
@@ -126,4 +139,52 @@
     width: 10px;
     height: 30px;
     background-color: gray;
+}
+
+/* note List right Container */
+.style-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px;
+}
+.span-input-styles>.bg-color{
+    padding: 0%;
+}
+.fontFamilyOption{
+    color: black;
+}
+.fileNameCls{
+    background-color: transparent;
+    color: #ffffff;
+}
+.fileNameCls:hover{
+    cursor:pointer;
+}
+.fileNameCls::placeholder{
+    color: white;
+}
+.stylesDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.StyleElement{
+    font-weight: bold;
+    font-size: large;
+}
+.SpanBtn{
+    width: 40%;
+}
+.SpanBtn>button,.SpanBtn>select{
+    width: 100%;
+}
+.SpanBtn>input[type="color"]{
+    width: 100%;
+    height: 30px;
+}
+.numberBtn{
+    width: 100%;
+    box-sizing: border-box;
 }

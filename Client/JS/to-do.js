@@ -125,7 +125,6 @@ function addMoreTaskNew() {
   // Append the 'td-checkbox' and 'td-task' divs to the outermost 'td-data' div
   tdDataDiv.appendChild(tdCheckboxDiv);
   tdDataDiv.appendChild(tdTaskDiv);
-
   document.getElementById("New-tasks-temp").appendChild(tdDataDiv);
 }
 function showAddToDo() {
@@ -139,7 +138,6 @@ function showAddToDo() {
 
 
 //Submit NEW todo .then
-let href = window.location.href;
 document.getElementById("NEW-TODO").addEventListener("submit", function (e) {
   e.preventDefault();
   let form = new FormData(e.target);

@@ -56,11 +56,15 @@ app.get('/calendar', async (req, res) => {
     res.render(CalendarFile, { Data });
 });
 
-app.get('/Note', (req, res) => {
-    res.render(NoteFile);
+app.get('/Note',async (req, res) => {
+    // let data=await (await fetch(URL+`/getNotes?q=${req.query.note}`)).json();
+    // document.getElementById('pageTextarea').value=(data[0]).content;
+    res.render(NoteFile,{});
 });
-app.get('/NoteList', (req, res) => {
-    res.render(NoteListFile);
+app.get('/NoteList',async (req, res) => {
+    //Get Note List Data
+    const Data=await GetData(URL+'/getNotes');
+    res.render(NoteListFile,{Data});
 });
 app.get('*', (req, res) => {
     res.render(NotFileFound);

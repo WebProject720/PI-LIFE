@@ -1,123 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Note</title>
-    <link rel="stylesheet" href="/Styles/BodyLayout.css" />
-    <link rel="stylesheet" href="/Styles/Notes.css" />
-    <link rel="shortcut icon" href="/Image/Notes-icon.svg" type="image/x-icon">
-  </head>
 
-  <body>
-    <div class="aside-nav">
-      <div class="elements">
-        <div class="">
-          <a
-            title="calendar"
-            class="element-item"
-            href="/public/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/Image/Calendar-icon.svg" alt class="aside-icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Note</title>
+  <link rel="stylesheet" href="/Styles/BodyLayout.css" />
+  <link rel="stylesheet" href="/Styles/Notes.css" />
+  <link rel="shortcut icon" href="/Image/Notes-icon.svg" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="aside-nav">
+    <div class="elements">
+      <div class="">
+        <a title="calendar" class="element-item" href="/calendar" target="" rel="noopener noreferrer">
+          <img src="/Image/Calendar-icon.svg" alt class="aside-icon" />
+        </a>
+      </div>
+      <div class="">
+        <a title="notes" class="element-item" href="/NoteList" target="" rel="noopener noreferrer">
+          <img src="/Image/Notes-icon.svg" alt class="aside-icon" />
+        </a>
+      </div>
+      <div class="">
+        <a title="to-do" class="element-item" href="/todo" target="" rel="noopener noreferrer">
+          <img src="/Image/TO-DO-icon.svg" alt class="aside-icon" />
+        </a>
+      </div>
+      <div class="">
+        <a class="element-item" title="profile" href="/" target="" rel="noopener noreferrer">
+          <img src="/Image/transparent-profile-icon.svg" alt class="aside-icon" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="a-m-c">
+    <div class="top-nav">
+      <div class="heading-section">
+        <h1>Notes</h1>
+      </div>
+      <div class="file-name">
+        <input placeholder="File Name" type="text" name="file-name" id="FileName" class="buttons fileNameCls">
+      </div>
+      <div class="nav-form">
+        <button class="buttons">
+          <a href="/NoteList" class="ButtonLink">
+            All Notes
           </a>
+        </button>
+        <button class="buttons">
+          <a href="/note" class="ButtonLink">
+            New Note
+          </a>
+        </button>
+      </div>
+    </div>
+    <div class="box">
+      <div class="container p-0">
+        <div class="notes-container">
+          <div class="n-m-box">
+            <div class="page size100">
+              <form action="" id="SubmitForm" class="size100 page-form">
+                <textarea placeholder="Enter Your Note" name="textarea" class="textarea" id="pageTextarea" cols=""
+                  rows=""></textarea>
+                <div class="actions">
+                  <button class="buttons">
+                    <a href="/NoteList" class="ButtonLink">
+                      Cancel
+                    </a>
+                  </button>
+                  <input type="submit" class="buttons" value="Save" />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="right-box">
+            <div class="style-container">
+              <div class="styles stylesDiv">
+                <span class="StyleElement"> Background color </span>
+                <span class="span-input-styles SpanBtn">
+                  <input value="#ffffff" type="color" name="color" id="color-button" class="buttons bg-color" />
+                </span>
+              </div>
+              <div class="stylesDiv">
+                <span class="StyleElement"> Font Size  </span>
+                <span class="span-input-styles SpanBtn">
+                  <input value="5" type="number" name="size" id="fontsize" max="100" min="5" class="buttons numberBtn" />
+                </span>
+              </div>
+              <div class="stylesDiv">
+                <span class="StyleElement"> Font Color  </span>
+                <span class="SpanBtn">
+                  <input type="color" name="color" class="buttons  p-0" id="FontColor" />
+                </span>
+              </div>
+              <div class="stylesDiv">
+                <span class="StyleElement"> Font Weight  </span>
+                <span class="SpanBtn">
+                  <select class="buttons" id="fontWeight">
+                    <option class="fontFamilyOption" value="normal">Default</option>
+                    <option class="fontFamilyOption" value="lighter">lighter</option>
+                    <option class="fontFamilyOption" value="bold">bold</option>
+                    <option class="fontFamilyOption" value="bolder">bolder</option>
+                  </select>
+                </span>
+              </div>
+              <div class="stylesDiv">
+                <span class="StyleElement">Font Family </span>
+                <span class="SpanBtn">
+                  <select id="FontFamily" class="buttons">
+                    <option class="fontFamilyOption" value="Times New Roman">
+                      Default
+                    </option>
+                    <option class="fontFamilyOption" value="cursive">cursive</option>
+                    <option class="fontFamilyOption" value="fantasy">fantasy</option>
+                    <option class="fontFamilyOption" value="monospace">monospace</option>
+                  </select>
+                </span>
+              </div>
+              <div class="stylesDiv">
+                <span class="StyleElement">Width</span>
+                <span class="SpanBtn">
+                  <input id="TextareaWidth" max="1500" min="800" type="number" class="buttons numberBtn" placeholder="width">
+                </span>
+              </div>
+              <div class="stylesDiv">
+                <span class="StyleElement">Height</span>
+                <span class="SpanBtn">
+                  <input id="TextareaHeight" type="number" max="5000" min="800" class="buttons numberBtn" placeholder="Height">
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="">
-          <a
-            title="notes"
-            class="element-item"
-            href="/public/Note-list.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/Image/Notes-icon.svg" alt class="aside-icon" />
-          </a>
-        </div>
-        <div class="">
-          <a
-            title="to-do"
-            class="element-item"
-            href="/public/ToDo.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/Image/TO-DO-icon.svg" alt class="aside-icon" />
-          </a>
-        </div>
-        <div class="">
-          <a
-            class="element-item"
-            title="profile"
-            href="/index.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/Image/transparent-profile-icon.svg"
-              alt
-              class="aside-icon"
-            />
-          </a>
+        <!-- <div class="absolute-box displayNone" id="absolute-box"></div> -->
+      </div>
+      <div class="footer">
+        <h1>
+          <center>@copyright - All rights are reserved</center>
+        </h1>
+        <div class="list">
+          <center>
+            <ul class="ul-footer">
+              <li class="footer-item">Facebook</li>
+              <li class="footer-item">Telegram</li>
+              <li class="footer-item">Instagram</li>
+              <li class="footer-item">Whatsapp</li>
+            </ul>
+          </center>
         </div>
       </div>
     </div>
-    <div class="a-m-c">
-      <div class="top-nav">
-        <div class="heading-section">
-          <h1>Notes</h1>
-        </div>
-        <div class="file-name">
-            <p>File Name</p>
-        </div>
-        <div class="nav-form">
-          <button class="buttons">Cancel</button>
-          <button  class="buttons">Save</button>
-        </div>
-      </div>
-      <div class="box">
-        <div class="container p-0">
-          <div class="notes-container">
-            <div class="n-m-box">
-                <div class="page size100">
-                    <form action="" class="size100 page-form">
-                        <textarea placeholder="Enter Your Day" name="" class="textarea" id="" cols="" rows=""></textarea>
-                        <!-- <div class="actions">
-                            <form action="">
-                                <input type="button" class="buttons" value="Cancel">
-                                <input type="button" class="buttons" value="Save">
-                            </form>
-                        </div> -->
-                    </form>
-                </div>
-            </div>
-            <div class="right-box">
-                <div class="toggle-btn">
-                    <button class="toggle-btn" type="button">
-                        <div class="clip-path"></div>
-                    </button>
-                </div>
-            </div>
-          </div>
-          <!-- <div class="absolute-box displayNone" id="absolute-box"></div> -->
-        </div>
-        <div class="footer">
-          <h1>
-            <center>@copyright - All rights are reserved</center>
-          </h1>
-          <div class="list">
-            <center>
-              <ul class="ul-footer">
-                <li class="footer-item">Facebook</li>
-                <li class="footer-item">Telegram</li>
-                <li class="footer-item">Instagram</li>
-                <li class="footer-item">Whatsapp</li>
-              </ul>
-            </center>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+  </div>
+</body>
+
 </html>
-<script src="/JS/to-do.js"></script>
+<script src="/src/Main/Notes.js"></script>

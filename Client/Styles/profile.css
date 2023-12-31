@@ -9,26 +9,23 @@
 }
 
 .img-box>.profile-img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .img-box {
-    background-color: white;
     width: fit-content;
     height: fit-content;
-    border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    width: 120px;
-    padding: 15px;
 }
 
 .details {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
     gap: 20px;
@@ -42,6 +39,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 5px;
+    width: 90%;
 }
 
 .username {

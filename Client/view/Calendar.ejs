@@ -21,22 +21,22 @@
     <div class="aside-nav">
       <div class="elements">
         <div class="">
-          <a title="calendar" class="element-item" href="/public/" target="_blank" rel="noopener noreferrer">
+          <a title="calendar" class="element-item" href="/calendar" target="" rel="noopener noreferrer">
             <img src="/Image/Calendar-icon.svg" alt class="aside-icon" />
           </a>
         </div>
         <div class="">
-          <a title="notes" class="element-item" href="/public/Note-list.html" target="_blank" rel="noopener noreferrer">
+          <a title="notes" class="element-item" href="/NoteList" target="" rel="noopener noreferrer">
             <img src="/Image/Notes-icon.svg" alt class="aside-icon" />
           </a>
         </div>
         <div class="">
-          <a title="to-do" class="element-item" href="/public/ToDo.html" target="_blank" rel="noopener noreferrer">
+          <a title="to-do" class="element-item" href="/todo" target="" rel="noopener noreferrer">
             <img src="/Image/TO-DO-icon.svg" alt class="aside-icon" />
           </a>
         </div>
         <div class="">
-          <a class="element-item" title="profile" href="/index.html" target="_blank" rel="noopener noreferrer">
+          <a class="element-item" title="profile" href="/" target="" rel="noopener noreferrer">
             <img src="/Image/transparent-profile-icon.svg" alt class="aside-icon" />
           </a>
         </div>
@@ -45,17 +45,17 @@
     <div class="a-m-c">
       <div class="top-nav">
         <div class="nav-1-box">
-          <div class="heading-section">
+          <div class="heading-section width33">
             <h1 class="marpad-0">Calendar</h1>
           </div>
-          <div class="month-name">
+          <div class="month-name width33">
             <p class="name marpad-0">
               <center class="name-month">
                 <%= Month(Data[0].name) %>
               </center>
             </p>
           </div>
-          <div class="nav-form">
+          <div class="nav-form width33">
             <form action="" id="searchForm">
               <select name="month" id="" class="buttons" title="month">
                 <option value="0">January</option>
@@ -105,11 +105,12 @@
         <div class="container p-0">
           <div class="calendar container-child">
             <div class="table-container">
-              <div class="one-day"
+              <div class="one-day Bg-Color"
                 style="grid-column:span <%= Data[0].month[0].date.day  %> ;  display:<% if(Data[0].month[0].date.day==0){ %>none<%}else{%>unset<%}%>">
               </div>
               <% Data[0].month.forEach(element=> { %>
-                <div class="one-day">
+                <% var today=false;if(element.date.year==new Date().getFullYear()&&element.date.month==new Date().getMonth()&&element.date.date==new Date().getDate()){today=true} %>
+                <div class="one-day <% if(today){  %><%=  'todayDiv' %><% } %>">
                   <div class="number">
                     <center>
                       <p>

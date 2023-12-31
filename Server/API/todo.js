@@ -103,32 +103,59 @@ function API(app) {
     //Send and Get Notes Data
     //prototype
     const NoteSchema = new mongoose.Schema({
-        name: String,
+        name: String,//Update
         date: Object,
         time: Object,
-        style: Object,
-        lastUpdate: Array,
-        content: Array,
+        style: Object,//Update
+        lastUpdate: Array,//Update
+        content: String,//Update
     });
-    data = {
-        name: "My Second Document",
-        date: { month: 12, year: 2022, day: 26 },
-        time: { hour: 23, minute: 56 },
-        style: { "font-family": "cursive" },
-        lastUpdate: [],
-        content: [{ text: "Hello I am second Document" }],
-    };
+    const NoteModel = mongoose.model("Notes", NoteSchema, "Notes");
     app.get("/getNotes", async (req, res) => {
-        const NoteModel = mongoose.model("Notes", NoteSchema, "Notes");
-        const result = await NoteModel.find({}, "name date time ");
+        let result;
+        if (req.query.q != undefined) {
+            result = await NoteModel.find({ name: req.query.q });
+        }
+        else {
+            result = await NoteModel.find();
+        }
         res.send(result);
     });
     app.post("/postNote", async (req, res) => {
-        const NoteModel = mongoose.model("Notes", NoteSchema, "Notes");
-        const container = new NoteModel(data);
+        const container = new NoteModel(req.body);
         const result = await container.save();
         res.send(result);
     });
-
+    app.delete('/deleteNote',async(req,res)=>{
+        let response=await NoteModel.deleteOne(req.body);
+        res.send(response);
+    })
+    app.put("/UpdateNote",async(req,res)=>{
+        const dataObj = new Date;
+        const date = {
+            "month": dataObj.getMonth(),
+            "year": dataObj.getFullYear(),
+            "day": dataObj.getDate()
+        }
+        const time = {
+            "hh": dataObj.getHours(),
+            "mm": dataObj.getMinutes()
+        }
+        let obj={
+            date:date,
+            time:time,
+            lastUpdate:[[date,time]],
+            style:req.body.style,
+            name:req.body.name,
+            content:req.body.content
+        }
+        if(req.body.PreName!=null){
+            obj.PreName=req.body.PreName
+        }else{
+            obj.PreName=req.body.name
+        }
+        let response=await NoteModel.findOneAndUpdate({name:obj.PreName},{$set:{content:obj.content,style:obj.style,name:obj.name}});
+        res.send(response);
+    });
 }
 module.exports = API;

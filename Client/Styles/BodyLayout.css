@@ -232,3 +232,9 @@ body {
         flex-direction: row;
     }
 }
+
+
+.ButtonLink{
+    color: white;
+    text-decoration: none;
+}
