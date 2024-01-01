@@ -23,12 +23,6 @@ document.getElementById('fontWeight').addEventListener('change', (e) => {
 //     if (Number(document.getElementById('TextareaHeight').min) < e.target.value)
 //         TextArea.height = e.target.value + 'px';
 // });
-function CSS(){
-    let element=document.getElementsByClassName('absolute-box')[0];
-    console.log(element.style.top);
-    console.log(element.firstElementChild.clientHeight)
-    // element.setAttribute('top')
-}
 CSS();
 //Set font family in options
 const fontFamilies = [

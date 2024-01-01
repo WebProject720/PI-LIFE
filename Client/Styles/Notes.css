@@ -112,6 +112,7 @@
     outline: 0px;
     overflow: hidden;
     max-width: 100vw;
+    min-height: 100vh;
 }
 .page-form {
     display: flex;
