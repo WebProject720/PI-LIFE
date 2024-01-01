@@ -90,7 +90,7 @@
 }
 
 .notes-container>.right-box {
-    height: 100%;
+    max-height: 100%;
     background-color: rgb(9, 25, 108);
     display: flex;
     padding: 20px 5px;
@@ -98,7 +98,6 @@
 }
 
 .textarea {
-    height: 900px;
     width: 80%;
     background-color: white;
     color: black;
@@ -107,7 +106,7 @@
     resize: none;
     border-color: white;
     outline-color: white;
-    padding:50px 20px;
+    padding:30px 20px;
     font-family: 'Times New Roman', Times, serif;
     border: 0px;
     outline: 0px;
@@ -191,10 +190,26 @@
 }
 /*  */
 @media screen and (max-width:600px) {
-    .right-box{
-        display: none !important;
-    }
     .notes-container{
         grid-template-columns: auto;
+    }
+    .right-box>.style-container{
+        display: none !important;
+    }
+    .right-box{
+        background-color: transparent !important;
+    }
+   .displayNone{
+    display: flex !important;
+   }
+   .absolute-box{
+    justify-content: flex-end;
+    align-items: flex-start;
+   }
+    .text{
+        font-size: small;
+    }
+    .buttons{
+        font-size: medium;
     }
 }

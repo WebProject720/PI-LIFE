@@ -15,15 +15,21 @@ document.getElementById('FontFamily').addEventListener('change', (e) => {
 document.getElementById('fontWeight').addEventListener('change', (e) => {
     TextArea.fontWeight = e.target.value;
 });
-document.getElementById('TextareaWidth').addEventListener('input', (e) => {
-    if (Number(document.getElementById('TextareaWidth').min) < e.target.value)
-        TextArea.width = e.target.value + 'px';
-});
-document.getElementById('TextareaHeight').addEventListener('input', (e) => {
-    if (Number(document.getElementById('TextareaHeight').min) < e.target.value)
-        TextArea.height = e.target.value + 'px';
-});
-
+// document.getElementById('TextareaWidth').addEventListener('input', (e) => {
+//     if (Number(document.getElementById('TextareaWidth').min) < e.target.value)
+//         TextArea.width = e.target.value + 'px';
+// });
+// document.getElementById('TextareaHeight').addEventListener('input', (e) => {
+//     if (Number(document.getElementById('TextareaHeight').min) < e.target.value)
+//         TextArea.height = e.target.value + 'px';
+// });
+function CSS(){
+    let element=document.getElementsByClassName('absolute-box')[0];
+    console.log(element.style.top);
+    console.log(element.firstElementChild.clientHeight)
+    // element.setAttribute('top')
+}
+CSS();
 //Set font family in options
 const fontFamilies = [
     'Arial',
@@ -44,6 +50,7 @@ const fontFamilies = [
 fontFamilies.forEach((e) => {
     document.getElementById('FontFamily').innerHTML += `<option class="fontFamilyOption" value="${e}">${e}</option>`
 })
+
 //
 function Back() {
     window.location.href = "http://localhost:5500/NoteList";
@@ -67,8 +74,8 @@ document.getElementById('SubmitForm').addEventListener('submit', (e) => {
             color: TextArea.color,
             fontFamily: TextArea.fontFamily,
             fontSize: TextArea.fontSize,
-            width:TextArea.width,
-            height:TextArea.height
+            width: TextArea.width,
+            height: TextArea.height
         },
         lastUpdate: [],
         content: document.getElementById(TextAreaID).value,
@@ -134,6 +141,7 @@ async function ShowData() {
         }
     }
     PutElementValue(style);
+    JSAfter()
 }
 function PutElementValue(style) {
     style.fontSize = (style.fontSize).slice(0, style.fontSize.length - 2);
@@ -142,9 +150,6 @@ function PutElementValue(style) {
     document.getElementById('fontsize').value = (style.fontSize);
     document.getElementById('FontFamily').value = style.fontFamily;
     document.getElementById('fontWeight').value = style.fontWeight;
-    document.getElementById('TextareaWidth').value = (style.width).slice(0, style.width.length - 2);
-    document.getElementById('TextareaHeight').value = (style.height).slice(0, style.height.length - 2);
-    console.log(style);
 }
 function RGBConvert(str) {
     const inputColor = str;
@@ -153,3 +158,7 @@ function RGBConvert(str) {
 }
 if (query != null)
     ShowData();
+
+function JSAfter(){
+    TextArea.height=document.getElementById(TextAreaID).scrollHeight+'px'
+}

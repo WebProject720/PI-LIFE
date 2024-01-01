@@ -45,6 +45,9 @@ body {
 
 .nav-form {
     padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .footer {
