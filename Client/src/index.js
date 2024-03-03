@@ -43,7 +43,7 @@ app.get('/calendar', async (req, res) => {
     if(req.query.month!=null || req.query.month!=undefined ){
         request.request.month=Number(req.query.month);
         request.request.year=Number(req.query.year)
-        console.log(request.request.year,request.request.month);
+        // console.log(request.request.year,request.request.month);
     }
     request = JSON.stringify(request);
     const Data = await GetData(URL + '/getCal', {

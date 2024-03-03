@@ -4,8 +4,11 @@
   "description": "01 December 2023",
   "main": "index.js",
   "scripts": {
+    "server":"nodemon Server/index.js",
+    "start":"nodemon Client/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -13,6 +16,7 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mongodb": "^6.3.0",
-    "mongoose": "^8.0.2"
+    "mongoose": "^8.0.2",
+    "nodemon": "^3.1.0"
   }
 }

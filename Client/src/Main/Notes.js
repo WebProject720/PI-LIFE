@@ -15,16 +15,6 @@ document.getElementById('FontFamily').addEventListener('change', (e) => {
 document.getElementById('fontWeight').addEventListener('change', (e) => {
     TextArea.fontWeight = e.target.value;
 });
-// document.getElementById('TextareaWidth').addEventListener('input', (e) => {
-//     if (Number(document.getElementById('TextareaWidth').min) < e.target.value)
-//         TextArea.width = e.target.value + 'px';
-// });
-// document.getElementById('TextareaHeight').addEventListener('input', (e) => {
-//     if (Number(document.getElementById('TextareaHeight').min) < e.target.value)
-//         TextArea.height = e.target.value + 'px';
-// });
-CSS();
-//Set font family in options
 const fontFamilies = [
     'Arial',
     'Helvetica',
