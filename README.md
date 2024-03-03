@@ -44,7 +44,7 @@ The backend of this project is built using the Express framework for NodeJS. It 
 1. **Install Dependencies:**
    ```bash
    npm install
-
+   ```
 
 ## Open the `PI-Life` folder in your preferred Integrated Development Environment (IDE) or Visual Studio Code.
 
@@ -54,9 +54,16 @@ cd PI-Life
 
 # Enter the following commands:
 
-## This command initializes the Graphical User Interface (GUI) and starts the client-side server, accessible on port number 5500. Access it through the hyperlink [http://localhost:5500](http://localhost:5500).
+1.**Client Server:**
+This command initializes the Graphical User Interface (GUI) and starts the client-side server, accessible on port number 5500. Access it through the hyperlink [http://localhost:5500](http://localhost:5500). 1.**Client Server:**
+
+```bash
 npm start
+```
 
-## This command initiates the server for the application, running on port number 5000. It establishes a connection between the MongoDB database and the client-side server using APIs.
-npm run server
+2.**Application Server:**
+This command initiates the server for the application, running on port number 5000. It establishes a connection between the MongoDB database and the client-side server using APIs.
 
+```bash
+npm server
+```
