@@ -177,12 +177,16 @@ body {
 .ul-footer {
     display: flex;
     justify-content: space-around;
+    justify-content: center;
     align-items: center;
     gap: 25px;
     padding: 2px;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
-
+.footer-icon{
+    width: 50px;
+}
 .footer-item {
     text-decoration: none;
     font-weight: bold;
