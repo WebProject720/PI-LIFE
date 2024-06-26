@@ -8,7 +8,9 @@
 :root {
     --aside-height: 60px;
 }
-
+#searchForm,.form{
+    display: flex;
+}
 .aside-nav {
     background-color: rgb(9, 25, 108);
     position: fixed;

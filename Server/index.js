@@ -25,4 +25,6 @@ ToDo(app);
 // const Calendar = require(path.join(__dirname, '/API/calendar.js'));
 // Calendar(app);
 //Server Running at port 5000
-app.listen(config.port);
+app.listen(config.port,(e)=>{
+    console.log("Server is running on : ",`http://localhost:${config.port}`)
+});

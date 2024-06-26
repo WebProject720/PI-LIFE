@@ -1,4 +1,5 @@
 const express = require('express');
+const { port } = require('../../Server/config');
 const app = express();
 const script = express();
 script.use(express.static('F:\\Projects\\PI LIFE\\Client\\src\\Main'));
@@ -43,7 +44,6 @@ app.get('/calendar', async (req, res) => {
     if(req.query.month!=null || req.query.month!=undefined ){
         request.request.month=Number(req.query.month);
         request.request.year=Number(req.query.year)
-        // console.log(request.request.year,request.request.month);
     }
     request = JSON.stringify(request);
     const Data = await GetData(URL + '/getCal', {
@@ -67,4 +67,6 @@ app.get('/NoteList',async (req, res) => {
 app.get('*', (req, res) => {
     res.render(NotFileFound);
 });
-app.listen(5500);
+app.listen(5500,(e)=>{
+    console.log("Application running on : ",`http://localhost:${5500}`)
+});
