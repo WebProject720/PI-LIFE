@@ -24,7 +24,7 @@ async function GetData(apiUrl, req) {
         return false;
     }
 }
-const URL = "http://localhost:5000";
+const URL = process.env.SERVER_URL;
 app.get(('/todo'), async (req, res) => {
     const data = await GetData(URL + '/getToDo');
     res.render(ToDoFile, { data });
